@@ -3,16 +3,18 @@ class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
 
         Queue<TreeNode> queue = new LinkedList<TreeNode>() ;
-        List<List<Integer> ListRoot = new ArrayList<List<Integer>();
+        List<List<Integer>> ListRoot = new ArrayList<List<Integer>>();
         TreeNode currentNode;
         int levelNum = 1;
-
-        queue.add(root);
+        
+        if(root != null) {
+           queue.add(root);               // fix nullPrinter error
+        }
 
         while(!queue.isEmpty()){
 
-            levelNum = queue.size();
-            List<Integer> ListCur = new ArrayList<Integer>();
+            levelNum = queue.size();    // 
+            List<Integer> ListCur = new ArrayList<Integer>();  // donnot worry about old curList,old already in rootList
             for(int i = 0; i < levelNum ; i ++){
                 
                 currentNode = queue.poll();
