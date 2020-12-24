@@ -10,16 +10,18 @@
 class Solution {
     public boolean isSymmetric(TreeNode root) {
         if(root == null) return true;
-        return inOrder(root.left,root.right);
+        return preOrder(root.left,root.right);
     }
-    public static boolean inOrder(TreeNode left,TreeNode right){
+    public static boolean preOrder(TreeNode left,TreeNode right){
         if(left == null){
+            //System.out.println( "null left !" );
             return left == right ? true : false;
         }else{
-            if(left != right){
+            if (right == null) return false;
+            if(left.val != right.val){
                 return false;
             }else{
-                return inOrder(left.left , right.right) && inOrder(left.right , right.left);
+                return (preOrder(left.left , right.right) && preOrder(left.right , right.left));
             }
         }
     } 
