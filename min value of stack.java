@@ -1,5 +1,5 @@
 class MinStack {
-    static Stack<Integer> s , help;
+    Stack<Integer> s , help;
 
     /** initialize your data structure here. */
     public MinStack() {
