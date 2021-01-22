@@ -1,3 +1,4 @@
+// 傻子！ 递归传递下标啊 干嘛传递数组 ，蠢驴！ //
 class Solution {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         if(inorder.length == 1){
