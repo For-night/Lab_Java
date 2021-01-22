@@ -1,12 +1,10 @@
 class Solution {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        if(preorder.length != inorder.length) return null;
         if(inorder.length == 1){
             return new TreeNode(inorder[0]);
         }else if(inorder.length == 0){
             return null;
         }
-
         TreeNode ans = new TreeNode(preorder[0]);
         int i;
         int preorderLeft[] ,preorderRight[] ,left_inorder[],right_inorder[];
@@ -14,34 +12,22 @@ class Solution {
             if(inorder[i] == preorder[0])
                 break;
         }
-        
+        left_inorder = new int[i];
+        preorderLeft = new int[i];
+        right_inorder = new int[inorder.length - i - 1];
+        preorderRight = new int[preorder.length - i - 1];
 
         if(i == 0){  // no left
-            left_inorder = new int[]{};
-            preorderLeft = new int[]{};
-            right_inorder = new int[inorder.length - 1];
-            preorderRight = new int[preorder.length - 1];
             for(int j = 0 ; j < right_inorder.length ; j++){
                 right_inorder[j] = inorder[j + 1];
                 preorderRight[j] = preorder[j + 1];
             }
         }else if(i == inorder.length - 1){ // no right
-            left_inorder = new int[inorder.length - 1];
-            preorderLeft = new int[preorder.length - 1];
-            right_inorder = new int[]{};
-            preorderRight = new int[]{};
             for(int j = 0 ; j < left_inorder.length ; j++){
                 left_inorder[j] = inorder[j];
                 preorderLeft[j] = preorder[j+1];
             }
         }else{
-            left_inorder = new int[i];
-            preorderLeft = new int[i];
-            right_inorder = new int[inorder.length -1 - i];
-            preorderRight = new int[preorder.length -1 - i];
-            System.out.println("inorder length is : " + inorder.length);
-            System.out.println("inorderL length is : " + left_inorder.length);
-            System.out.println("inorderR length is : " + right_inorder.length);
             for(int j = 0; j < i ; j++){
                 left_inorder[j] = inorder[j];
                 preorderLeft[j] = preorder[j+1];
@@ -51,11 +37,6 @@ class Solution {
                 preorderRight[j] = preorder[j+i+1];
             }
         }
-
-
-
-
-
 
         ans.left = buildTree(preorderLeft,left_inorder);
         ans.right = buildTree(preorderRight,right_inorder);
