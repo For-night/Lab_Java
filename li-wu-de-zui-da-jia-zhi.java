@@ -1,4 +1,5 @@
 // typical dp problem
+// dp 为了节省空间，dp直接用传入函数的参数
 class Solution {
     public int maxValue(int[][] grid) {
         int hang = grid.length , lie = grid[0].length;
