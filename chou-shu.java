@@ -1,3 +1,6 @@
+/*
+    寻找递推关系，初始条件一般都是从零开始考虑， 普遍情况地推，默认出发点就是完美的
+*/
 class Solution {
     public int nthUglyNumber(int n) {
         int dp[] = new int[n];
