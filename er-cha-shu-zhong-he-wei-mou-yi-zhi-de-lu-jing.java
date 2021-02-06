@@ -28,3 +28,26 @@ class Solution {
         if(root.left == null && root.right == null && sumAche == sum) ans.add(listCache);
     }
 }
+// 大佬的做法，removeLast NB！
+// class Solution {
+//     public static List<List<Integer>> ans;
+//     public static LinkedList<Integer> listCache;
+//     public List<List<Integer>> pathSum(TreeNode root, int sum) {
+//         ans = new LinkedList<>();
+//         listCache = new LinkedList<>();
+//         bianli(root,0,sum);
+//         return ans;
+//     }
+
+//     public void bianli(TreeNode root  , int sumAche,int sum){
+//         if(root == null)  return;
+
+//         sumAche += root.val;
+//         listCache.add(root.val);
+//         //System.out.println(listCache);
+//         if(root.left == null && root.right == null && sumAche == sum) ans.add(new LinkedList(listCache));   
+//         if(root.left != null) bianli(root.left ,  sumAche,sum);
+//         if(root.right != null) bianli(root.right ,  sumAche,sum);
+//         listCache.removeLast();
+//     }
+// }
