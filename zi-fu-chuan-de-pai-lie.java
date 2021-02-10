@@ -11,6 +11,7 @@ class Solution {
             res.add(String.valueOf(c)); // 添加排列方案
             return;
         }
+        // 每一次进入函数（每一层）都有一个set
         HashSet<Character> set = new HashSet<>();
         for(int i = x; i < c.length; i++) {
             if(set.contains(c[i])) continue; // 重复，因此剪枝
