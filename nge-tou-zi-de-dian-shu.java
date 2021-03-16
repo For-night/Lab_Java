@@ -1,4 +1,35 @@
 class Solution {
+    public double[] dicesProbability(int n) {
+        int dp[][] = new int[n + 1][6*n + 1];
+        for(int i = 1 ; i <= 6 ; i ++){
+            dp[1][i] = 1 ;
+        }
+
+        for(int hang = 2 ; hang <= n ; hang ++){
+
+            for(int he = hang ; he <= hang * 6 ; he ++){
+                
+                for(int curIs = 1  ; curIs <= 6 ; curIs ++){
+                    // he 就是 sum
+                    if(he - curIs <= 0){
+                        break;
+                    }
+                    dp[hang][he] += dp[hang - 1][he - curIs];
+                }
+            }
+
+        }
+
+        double []ans = new double[6 * n - n + 1];
+        for(int index = 0 ; index < ans.length ; index ++){
+            ans[index] = dp[n][n + index] / Math.pow(6.0 , n);
+        }
+        return ans;
+    }
+}
+
+/* 暴力不可取！*/
+class Solution {
     static List<Integer> al;
     static int deep;
     public double[] dicesProbability(int n) {
