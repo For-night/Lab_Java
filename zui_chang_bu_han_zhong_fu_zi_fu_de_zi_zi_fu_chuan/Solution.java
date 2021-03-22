@@ -21,7 +21,6 @@ class Solution {
             		start ++;
             	}
             	start ++;
-                //start = subStr.indexOf(s.charAt(i)) + 1;
                 System.out.println("after start ++ end is :"+end+" start is :"+ start+ " ans is : " + ans);
             }
         }
@@ -36,3 +35,6 @@ class Solution {
     	
 	}
 }
+/*
+* dic.put(s.charAt(j), j); // 更新哈希表记录，用char做key，来更新最靠后面的index!! NB
+*/
