@@ -58,7 +58,9 @@ class Solution {
     
     public static void main(String [] args) {
     	Solution s = new Solution();
-    	//System.out.println(s.sumOfx(110001)+" "+s.longOfNum(110001));
-    	System.out.println(s.movingCount(38,15,9));
+    	//System.out.println(s.sumOfx(110001)+" "+s.longOfNum(110001)); s.movingCount(38,15,9)
+    	String ss = "zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan";
+    	System.out.println(ss.replace('-', '_'));
+    	
 	}
 }
