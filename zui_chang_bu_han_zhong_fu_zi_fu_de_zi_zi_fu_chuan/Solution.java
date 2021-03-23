@@ -30,11 +30,11 @@ class Solution {
     public static void main(String [] args) {
     	Solution s = new Solution();
     	System.out.println(s.lengthOfLongestSubstring("aab")); 
-    	//String ss = "zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan";
-    	//System.out.println(ss.replace('-', '_'));
+    	String ss = "shu-de-zi-jie-gou";
+    	System.out.println(ss.replace('-', '_'));
     	
 	}
 }
 /*
-* dic.put(s.charAt(j), j); // 更新哈希表记录，用char做key，来更新最靠后面的index!! NB
+* dic.put(s.charAt(j), j); // 鏇存柊鍝堝笇琛ㄨ褰曪紝鐢╟har鍋歬ey锛屾潵鏇存柊鏈�闈犲悗闈㈢殑index!! NB
 */
