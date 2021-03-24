@@ -1,5 +1,8 @@
 package zui_chang_bu_han_zhong_fu_zi_fu_de_zi_zi_fu_chuan;
 
+import java.util.HashSet;
+import java.util.Set;
+
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         int ans = 0;
@@ -30,9 +33,20 @@ class Solution {
     public static void main(String [] args) {
     	Solution s = new Solution();
     	System.out.println(s.lengthOfLongestSubstring("aab")); 
-    	String ss = "shu-de-zi-jie-gou";
-    	System.out.println(ss.replace('-', '_'));
-    	
+    	String ss = "[[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]]\r\n" + 
+    			"\"ABCCED\" ";
+    	ss = ss.replace('[', '{');
+    	ss = ss.replace(']', '}');
+    	ss = ss.replace('"', '\'');
+    	//System.out.println(ss.replace('-', '_'));
+    	System.out.println(ss);
+    	Set<String> set = new HashSet<String>();
+    	set.add("hello");
+    	int []a = {1,2};
+    	System.out.println( " has hello ? : " + set.contains("hello"));
+    	int ii = 3;
+    	String s1 = ii+2 + ""+(6 + ii);
+    	System.out.println(s1);
 	}
 }
 /*
