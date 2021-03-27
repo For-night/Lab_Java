@@ -6,11 +6,11 @@ import java.util.Set;
 class Solution {
     public char[][] matrix;
     public char[] letter;
-    public Set<String> set;
+    // public Set<Integer> set;
     public boolean exist(char[][] board, String word) {
         matrix = board;
         letter = word.toCharArray();
-        set = new HashSet<String>();
+        // set = new HashSet<Integer>();
 
         if(matrix.length == 0 || letter.length == 0){
             return true;
@@ -24,7 +24,7 @@ class Solution {
                     if(check( i , j , 0)){
                         return true;
                     }else{
-                        set.clear();
+                        // set.clear();
                     }
                 }
             }
@@ -41,48 +41,50 @@ class Solution {
             return false;
     	}
     	// 说明这个地方相等，那么就标记一下来过
-    	set.add(i+ " " +j); 
+    	//set.add((i<<10)+j); 
+        matrix[i][j] = '\0';
     	
         boolean up = false,down= false,left= false,right= false;
         
         if( i > 0 ){
-            if(set.contains((i-1) + " " +j)){
-                up = false;
-            }else {
+            // if(set.contains(((i-1)<<10) +j)){
+            //     up = false;
+            // }else {
 				up = check(i - 1 , j , index + 1);
-            }
+            // }
 
         }
         
         if( i < matrix.length - 1){
-            if(set.contains(i+1 + " " +j)){
-                down = false;
-            }else {
+            // if(set.contains(((i+1) << 10) +j)){
+            //     down = false;
+            // }else {
             	down = check(i + 1 , j , index + 1);
-            }
+            // }
         }
         
         if( j > 0 ){
-            if(set.contains(i + " " +(j - 1))){
-                left = false;
-            }else {
+            // if(set.contains((i <<10) +(j - 1))){
+            //     left = false;
+            // }else {
             	left = check(i , j - 1 , index + 1);
-            }
+            // }
         }
         
         if( j < matrix[0].length - 1){
-            if(set.contains(i + " " +(j + 1))){
-                right = false;
-            }else {
+            // if(set.contains((i <<10) +(j + 1))){
+            //     right = false;
+            // }else {
             	right = check(i , j + 1 , index + 1);
-            }
+            // }
         }
         
         boolean ans = up|down|right|left;
         
         if(ans == false) {
         	// 但是这个地方上下左右都是false，删除这个点
-        	set.remove(i+ " " +j);
+        	//set.remove((i<<10) +j);
+            matrix[i][j] = letter[index];
         }
         return ans;
     }
@@ -90,6 +92,14 @@ class Solution {
     public static void main(String [] args) {
     	Solution s = new Solution();
     	System.out.println(s.exist(new char[][] {{'a','a','a','a'},{'a','a','a','a'},{'a','a','a','a'}},"aaaaaaaaaaab")); 
+    	
+    	int i = 10;
+    	i = (i<<10) + 1;
+    	System.out.println(i);
+    	
+    	int x = 100;
+    	String sx = "" + x;
+    	System.out.println("string:" + sx);
 
 	}
 }
