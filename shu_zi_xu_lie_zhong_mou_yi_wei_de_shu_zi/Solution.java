@@ -27,7 +27,7 @@ class Solution {
 
     }
     public static void main(String [] args) {
-    	String ss = "shu-zi-xu-lie-zhong-mou-yi-wei-de-shu-zi";
+    	String ss = "ba-zi-fu-chuan-zhuan-huan-cheng-zheng-shu";
     	System.out.println(ss.replace('-', '_'));
     	
     	Solution s = new Solution();
