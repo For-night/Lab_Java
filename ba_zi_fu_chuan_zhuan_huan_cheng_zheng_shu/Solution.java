@@ -53,7 +53,7 @@ class Solution {
     }
     
     public static void main(String [] args) {
-    	String ss = "ba-zi-fu-chuan-zhuan-huan-cheng-zheng-shu";
+    	String ss = "biao-shi-shu-zhi-de-zi-fu-chuan";
     	System.out.println(ss.replace('-', '_'));
     	
     	Solution s = new Solution();
