@@ -8,7 +8,7 @@ public class Solution {
     ArrayList<Integer> res;
 
     public int reversePairs(int[] nums) {
-        res = new ArrayList<Integer>();
+        res = new ArrayList<>();
 
         if(nums.length< 2){
             return 0;
