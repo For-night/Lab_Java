@@ -98,7 +98,7 @@ public class Codec {
         return  ans;
     }
     public static void main(String [] args){
-        String str = "xu-lie-hua-er-cha-shu";
+        String str = "shu-zu-zhong-de-ni-xu-dui";
         System.out.println(str.replace('-', '_'));
 
         Codec c = new Codec();
