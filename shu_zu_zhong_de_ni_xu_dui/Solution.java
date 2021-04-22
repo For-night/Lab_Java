@@ -71,7 +71,7 @@ public class Solution {
     }
 
     public static void main(String [] args) {
-        String str = "shu-zu-zhong-de-ni-xu-dui";
+        String str = "1nzheng-shu-zhong-1chu-xian-de-ci-shu";
         System.out.println(str.replace('-', '_'));
         Solution s = new Solution();
         System.out.println(s.reversePairs(new int[]{1,3,2,3,1}));
