@@ -81,7 +81,7 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        String str = "1nzheng-shu-zhong-1chu-xian-de-ci-shu";
+        String str = "my-calendar-ii";
         System.out.println(str.replace('-', '_'));
 
         Solution s = new Solution();
